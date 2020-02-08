@@ -32,11 +32,17 @@ class User extends Authenticatable
      * The attributes that should be cast to native types.
      *
      * @var array
+     *
      */
+
+    /* TODO Relation pour récupérer les contacts d'un utilisateur */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
 
+    public function contacts() {
+        return $this->hasMany('App\Contact');
+    }
 
-    /* TODO Relation pour récupérer les contacts d'un utilisateur */
+
 }
